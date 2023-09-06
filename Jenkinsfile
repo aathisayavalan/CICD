@@ -16,7 +16,7 @@ pipeline {
             steps {
                echo "Finallyier231Update Deploying the app.."
 	       script {
-		       sh "java -V && echo "success" || exit 1"
+		       sh "date && echo "success" || exit 1"
 	       }
             }
           }
