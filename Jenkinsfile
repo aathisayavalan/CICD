@@ -20,6 +20,11 @@ pipeline {
 	       }
             }
           }
+	  post {
+		  failure {
+			  echo " build got failed"
+		  }
+	  }
   }
 }
 
