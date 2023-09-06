@@ -14,7 +14,7 @@ pipeline {
 	  }
   	  stage(Deploy) {
             steps {
-               echo "i1Update Deploying the app.."
+               echo "i231Update Deploying the app.."
             }
           }
   }
