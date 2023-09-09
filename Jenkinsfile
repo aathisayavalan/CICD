@@ -14,7 +14,7 @@ pipeline {
 	       echo "Testing the app.."
 	    }
 	  }
-	  stage(selected Env){
+	  stage(selected Env) {
             steps {
 		echo "env is ${ENV}"
 		  }
