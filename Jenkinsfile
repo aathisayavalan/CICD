@@ -1,5 +1,7 @@
 pipeline {
 	agent any
+	paramaters {
+	    choice(name: 'ENV', choices: ['dev', 'qa'], description: '')
 
 	stages {
 	  stage(build) {
@@ -11,6 +13,11 @@ pipeline {
 	    steps {
 	       echo "Testing the app.."
 	    }
+	  }
+	  stage(selected Env){
+            steps {
+		echo "env is ${ENV}"
+		  }
 	  }
   	  stage(Deploy) {
             steps {
