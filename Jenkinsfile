@@ -1,29 +1,28 @@
 pipeline {
-	agent any
-	parameters {
-	    choice(name: 'ENV', choices: ['dev', 'qa'], description: '')
-	}
-	stages {
-	  stage(build) {
-	    steps {
-	      echo "Building the app.."
-	    }
-	  }
-	  stage(test) {
-	    steps {
-	       echo "Testing the app.."
-	    }
-	  }
-	  stage(selected Env) {
+    agent any
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'qa'], description: '')
+    }
+    stages {
+        stage('Build') {
             steps {
-		echo "environment is ${ENV}"
-	    }
-	  }
-  	  stage(Deploy) {
-            steps {
-               echo "Finallyidder231Update Deploying the app.."
+                echo "Building the app.."
             }
-          }
-  }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing the app.."
+            }
+        }
+        stage('Selected Env') {
+            steps {
+                echo "Environment is ${ENV}"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying the app.."
+            }
+        }
+    }
 }
-
