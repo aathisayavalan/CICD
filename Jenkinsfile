@@ -16,8 +16,8 @@ pipeline {
 	  }
 	  stage(selected Env) {
             steps {
-		echo "env is ${ENV}"
-		  }
+		echo "environment is ${ENV}"
+	    }
 	  }
   	  stage(Deploy) {
             steps {
