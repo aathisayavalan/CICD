@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Selected Env') {
             steps {
-                echo "Environment is ${ENV}"
+                echo "Environment is ${params.ENV}"
             }
         }
         stage('Deploy') {
