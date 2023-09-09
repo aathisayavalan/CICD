@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	paramaters {
 	    choice(name: 'ENV', choices: ['dev', 'qa'], description: '')
-
+	}
 	stages {
 	  stage(build) {
 	    steps {
