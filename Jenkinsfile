@@ -3,10 +3,14 @@ pipeline {
     parameters {
         choice(name: 'ENV', choices: ['dev', 'qa'], description: '')
     }
+    environment {
+        git_username = credentials('github')
+    }
     stages {
         stage('Build') {
             steps {
                 echo "Building the app.."
+                echo "git username ${git_username}"
             }
         }
         stage('Test') {
