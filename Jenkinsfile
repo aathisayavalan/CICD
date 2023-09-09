@@ -1,31 +1,29 @@
 pipeline {
 	agent any
+	paramaters {
+	    choice(name: 'ENV', choices: ['dev', 'qa'], description: '')
 
 	stages {
 	  stage(build) {
 	    steps {
-	      echo "Buildddiddddng the app.."
+	      echo "Building the app.."
 	    }
 	  }
 	  stage(test) {
 	    steps {
-	       echo "Testingggg the app.."
+	       echo "Testing the app.."
 	    }
+	  }
+	  stage(selected Env){
+            steps {
+		echo "env is ${ENV}"
+		  }
 	  }
   	  stage(Deploy) {
             steps {
-               echo "Finallyier231Update Deploying the app.."
-	       script {
-		       sh "date && echo "success" || exit 1"
-	       }
+               echo "Finallyidder231Update Deploying the app.."
             }
           }
-	}
-	  post {
-		  success {
-			  echo " build got success"
-		  }
-	  }
   }
-
+}
 
